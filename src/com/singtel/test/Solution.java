@@ -1,6 +1,8 @@
 package com.singtel.test;
 
 import com.singtel.test.animal.bird.Bird;
+import com.singtel.test.animal.bird.Butterfly;
+import com.singtel.test.animal.bird.Caterpillar;
 import com.singtel.test.animal.bird.Chicken;
 import com.singtel.test.animal.bird.Duck;
 import com.singtel.test.animal.bird.Parrot;
@@ -8,6 +10,7 @@ import com.singtel.test.animal.bird.Rooster;
 import com.singtel.test.animal.fish.ClownFish;
 import com.singtel.test.animal.fish.Dolphin;
 import com.singtel.test.animal.fish.Shark;
+import com.singtel.test.behaviour.impl.ButterflyBehavior;
 import com.singtel.test.behaviour.impl.CatSound;
 import com.singtel.test.behaviour.impl.ChickenSound;
 import com.singtel.test.behaviour.impl.ClownFishBehaviour;
@@ -116,6 +119,21 @@ public class Solution {
 		Dolphin dolphine = new Dolphin();
 		dolphine.walk();
 		System.out.println("Answer for B Ended.");
+		
+		// Answer for C
+		System.out.println("======================================================================================");
+		System.out.println("Answer for C Started");
+		System.out.println("======================================================================================");
+		Butterfly butterfly = new Butterfly();
+		butterfly.setFlyBehaviour(new ButterflyBehavior());
+		System.out.println("Butterfly : " + butterfly.getFlyBehaviour().fly());
+		butterfly.walk();
+		
+		Caterpillar caterpillar = new Caterpillar();
+		caterpillar.fly();
+		caterpillar.walk();
+		System.out.println("Answer for C Ended.");
+				
 		
 	}
 
