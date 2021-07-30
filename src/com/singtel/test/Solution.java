@@ -1,5 +1,9 @@
 package com.singtel.test;
 
+import com.singtel.test.animal.Animal;
+import com.singtel.test.animal.Cat;
+import com.singtel.test.animal.Dog;
+import com.singtel.test.animal.Frog;
 import com.singtel.test.animal.bird.Bird;
 import com.singtel.test.animal.bird.Butterfly;
 import com.singtel.test.animal.bird.Caterpillar;
@@ -9,6 +13,7 @@ import com.singtel.test.animal.bird.Parrot;
 import com.singtel.test.animal.bird.Rooster;
 import com.singtel.test.animal.fish.ClownFish;
 import com.singtel.test.animal.fish.Dolphin;
+import com.singtel.test.animal.fish.Fish;
 import com.singtel.test.animal.fish.Shark;
 import com.singtel.test.behaviour.impl.ButterflyBehavior;
 import com.singtel.test.behaviour.impl.CatSound;
@@ -134,6 +139,64 @@ public class Solution {
 		caterpillar.walk();
 		System.out.println("Answer for C Ended.");
 				
+		//Answer for D
+		System.out.println("======================================================================================");
+		System.out.println("Answer for D Started");
+		System.out.println("======================================================================================");
+		Animal[] animals = new Animal[]{
+				new Bird(),
+				new Duck(),
+				new Chicken(),
+				new Rooster(),
+				new Parrot(),
+				new Fish(),
+				new Shark(),
+				new ClownFish(),
+				new Dolphin(),
+				new Frog(),
+				new Dog(),
+				new Butterfly (),
+				new Cat()
+				};
+		
+		//Can you share the code to count:
+			//1. How many of these animals can fly?
+			//2. How many of these animals can walk?
+			//3. How many of these animals can sing?
+			//4. How many of these animals can swim?
+		
+		int countFlyBehavior = 0;
+		int countwalkBehavior = 0;
+		int countSingBehavior = 0;
+		int countSwimBehavior = 0;
+		
+		countwalkBehavior = animals.length;
+		
+		for(Animal animal : animals) {
+			if(animal instanceof Fish || animal instanceof Dolphin)  {
+				countwalkBehavior--;
+			} else if(animal instanceof Bird) {
+				Bird bird1 = (Bird) animal;
+				countFlyBehavior++;
+				if(bird1 instanceof Parrot) {
+					countSingBehavior++;
+				}
+				if(bird1 instanceof Duck) {
+					countSwimBehavior++;
+				}
+			} else if(animal instanceof Fish) {
+				countSwimBehavior++;
+			} else if(animal instanceof Dolphin) {
+				countSwimBehavior++;
+			}
+			
+		}
+		
+		System.out.println("Count of Fly Behavor Animal : " + countFlyBehavior);
+		System.out.println("Count of walk Behavor Animal : " + countwalkBehavior);
+		System.out.println("Count of sing Behavor Animal : " + countSingBehavior);
+		System.out.println("Count of swim Behavor Animal : " + countSwimBehavior);
+		System.out.println("Answer for D Ended.");
 		
 	}
 
