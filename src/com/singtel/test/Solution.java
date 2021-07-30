@@ -5,8 +5,12 @@ import com.singtel.test.animal.bird.Chicken;
 import com.singtel.test.animal.bird.Duck;
 import com.singtel.test.animal.bird.Parrot;
 import com.singtel.test.animal.bird.Rooster;
+import com.singtel.test.animal.fish.ClownFish;
+import com.singtel.test.animal.fish.Dolphin;
+import com.singtel.test.animal.fish.Shark;
 import com.singtel.test.behaviour.impl.CatSound;
 import com.singtel.test.behaviour.impl.ChickenSound;
+import com.singtel.test.behaviour.impl.ClownFishBehaviour;
 import com.singtel.test.behaviour.impl.DogSound;
 import com.singtel.test.behaviour.impl.DuckSound;
 import com.singtel.test.behaviour.impl.DuckSwim;
@@ -14,6 +18,7 @@ import com.singtel.test.behaviour.impl.FlightlessBird;
 import com.singtel.test.behaviour.impl.FlyingBird;
 import com.singtel.test.behaviour.impl.PhoneSound;
 import com.singtel.test.behaviour.impl.RoosterSound;
+import com.singtel.test.behaviour.impl.SharkFishBehavior;
 
 public class Solution {
 	
@@ -85,6 +90,32 @@ public class Solution {
 		System.out.println("A parrot living near the Phone says:" + parrot.getSoundBehaviour().sound());
 		System.out.println("Answer for A.4 Ended.");
 		
+		
+		// Answer for B		
+		System.out.println("======================================================================================");
+		System.out.println("Answer for B Started");
+		System.out.println("======================================================================================");
+		Shark shark = new Shark();
+		shark.setSharkFishBehavior(new SharkFishBehavior());
+		shark.sing();
+		shark.swim();
+		shark.walk();
+		System.out.println("Shark Fish Color : " + shark.getSharkFishBehavior().color());
+		System.out.println("Shark Fish behaviour : " + shark.getSharkFishBehavior().behaviour());
+		
+		ClownFish clownfish = new ClownFish();
+		clownfish.sing();
+		clownfish.swim();
+		clownfish.walk();
+		
+		clownfish.setClownFishBehaviour(new ClownFishBehaviour());
+		
+		System.out.println("ClownFish  Color : " + clownfish.getClownFishBehaviour().color());
+		System.out.println("ClownFish  behaviour : " + clownfish.getClownFishBehaviour().behaviour());
+
+		Dolphin dolphine = new Dolphin();
+		dolphine.walk();
+		System.out.println("Answer for B Ended.");
 		
 	}
 
